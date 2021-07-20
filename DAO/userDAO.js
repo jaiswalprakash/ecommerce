@@ -14,7 +14,6 @@ const userDAO = {
         
         try {
             let data = await userModel.findOne({ email: bodyData.email });
-            // console.log(data);
             if (!data) {
                 throw new error('unable to login');
             }
@@ -33,9 +32,7 @@ const userDAO = {
     },
      generateAuthToken:async function(bodyData){
         const user =bodyData;
-        // console.log('user',user);
         const token =jwt.sign({_id:user._id.toString()},'thisIsNewUser', ); // token is generated 
-        //console.log('token',token);
         user.tokens=user.tokens.concat({token:token});// now we concat that token to our model
         await user.save();
         return token;

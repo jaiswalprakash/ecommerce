@@ -11,19 +11,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7",
     "node-localstorage": "^2.1.6",
-    "nodemon": "^2.0.2",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/chai-http": "^4.2.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "faker": "^5.1.0",
-    "mocha": "^8.2.1",
-    "sinon": "^9.2.1"
+    "nodemon": "^2.0.2"
   },
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

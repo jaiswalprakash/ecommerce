@@ -5,7 +5,6 @@ const auth = require('../middleware/auth')
 
 route.post('/signUp', async function (req, res) {
     try {
-        console.log(req.body);
         let data = await userDAO.create(req.body);
         const token = await userDAO.generateAuthToken(data);
         if (data) {
@@ -20,7 +19,6 @@ route.post('/signUp', async function (req, res) {
 });
 route.post('/login', async function (req, res) {
     try {
-        console.log(req.body);
         let data = await userDAO.login(req.body);
         const token = await userDAO.generateAuthToken(data);
         if (data) {

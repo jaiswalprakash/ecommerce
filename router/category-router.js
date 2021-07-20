@@ -9,7 +9,6 @@ route.post('/insertCategory', async function (req, res) {
 
     try {
         let data = await categoryDAO.insertCategory(req.body);
-        console.log(data);
         if (data && data.length > 0) {
             res.send('data stored in category')
         }

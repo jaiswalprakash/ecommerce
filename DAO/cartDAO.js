@@ -7,13 +7,11 @@ const cartDAO = {
     addToCart: async (bodyData) => {
         arr.push(bodyData.productId)
         localStorage.setItem('cart', arr);
-        console.log(localStorage.getItem('cart'))
         return localStorage.getItem('cart');
     },
     addToMyCart: async (bodyData) => {
 
         let data = await cartModel.find({ userId: bodyData.userId });
-        console.log(data);
         if (data.length > 0) {
             let data = await cartModel.updateOne({ userId: bodyData.userId }, { $addToSet: { productId: bodyData.productId } });
             return data;

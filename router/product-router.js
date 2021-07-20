@@ -20,7 +20,6 @@ route.post('/insertProduct', async function (req, res) {
 
 route.get('/getProduct', async function (req, res) {
     try {
-        // console.log(req.params.name)
         let data = await productDAO.getProduct();
         if (data) {
             res.status(200).send(data)
